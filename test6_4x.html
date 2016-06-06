@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MY NAV</title>
+  <style>
+    @keyframes l0 {
+      0% {
+        width: calc(50% - 2em);
+        padding-right: 2em;
+      }
+      50% {
+        width: 0;
+        padding-right: 2em;
+      }
+      100% {
+        width: 0;
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+    @keyframes r0 {
+      0% {
+        width: calc(50% - 2em);
+        padding-left: 2em;
+      }
+      50% {
+        width: 0;
+        padding-left: 2em;
+      }
+      100% {
+        width: 0;
+        padding-left: 0;
+        border-left: none;
+      }
+    }
+    @keyframes l1 {
+      0% {
+        width: 0;
+        padding-right: 0;
+        border-right: 1px solid transparent;
+      }
+      50% {
+        width: 0;
+        padding-right: 2em;
+        border-right: 1px solid transparent;
+      }
+      100% {
+        width: calc(50% - 2em);
+        padding-right: 2em;
+        border-right: 1px solid transparent;
+      }
+    }
+    @keyframes r1 {
+      0% {
+        width: 0;
+        padding-left: 0;
+        border-left: 1px solid transparent;
+      }
+      50% {
+        width: 0;
+        padding-left: 2em;
+        border-left: 1px solid transparent;
+      }
+      100% {
+        width: calc(50% - 2em);
+        padding-left: 2em;
+        border-left: 1px solid transparent;
+      }
+    }
+
+    body {
+      margin: 5px;
+      text-align: center;
+    }
+    ul.nav {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul.nav li {
+      float: left;
+      border-left: 1px solid white;
+      border-bottom: 2px solid white;
+      background: #faa819;
+      position: relative;
+    }
+    ul.nav li:first-child {
+      border-left: none;
+    }
+    ul.nav a {
+      display: block;
+      padding: 0 2em;
+      line-height: 2.1em;
+      text-decoration: none;
+      color: #333;
+      background: white;
+      border: 1px solid black;
+    }
+    ul.nav .selected a {
+      color: #333;
+      background: white;
+      border: 1px solid black;
+      cursor: default;
+    }
+
+    .wl, .wr {
+      top: 0;
+      position: absolute;
+      line-height: 2.1em;
+      background-color: #faa819;
+      border: 1px solid transparent;
+      color: #fff;
+      width: calc(50% - 2em);
+      overflow: hidden;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .wl {
+      direction: rtl;
+      right: 0;
+      padding-right: 2em;
+      border-left: none;
+    }
+    .wr {
+      left: 0;
+      padding-left: 2em;
+      border-right: none;
+    }
+    .selected .wl {
+      width: 0;
+      padding-right: 0;
+      border-right: none;
+    }
+    .selected .wr {
+      width: 0;
+      padding-left: 0;
+      border-left: none;
+    }
+    ul.nav li:hover .wl {
+      animation: l0 1s linear forwards;
+    }
+    ul.nav li:hover .wr {
+      animation: r0 1s linear forwards;
+    }
+
+    ul.nav:hover li.selected .wl {
+      animation: l1 1s linear forwards;
+    }
+
+    ul.nav:hover li.selected .wr {
+      animation: r1 1s linear forwards;
+    }
+    ul.nav:hover li.selected:hover .wl {
+      animation: none;
+    }
+
+    ul.nav:hover li.selected:hover .wr {
+      animation: none;
+    }
+    ::selection {
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <ul class='nav'>
+    <li class='selected'><div class='wl'>Home</div><div class='wr'>Home</div><a href='#'>Home</a></li>
+    <li><div class='wr'>About</div><div class='wl'>About</div><a href='#'>About</a></li>
+    <li><div class='wl'>News</div><div class='wr'>News</div><a href='#'>News</a></li>
+    <li><div class='wl'>Out work</div><div class='wr'>Out work</div><a href='#'>Out work</a></li>
+    <li><div class='wl'>Products</div><div class='wr'>Products</div><a href='#'>Products</a></li>
+    <li><div class='wl'>Services</div><div class='wr'>Services</div><a href='#'>Services</a></li>
+    <li><div class='wl'>Clients</div><div class='wr'>Clients</div><a href='#'>Clients</a></li>
+    <li><div class='wl'>Case Studies</div><div class='wr'>Case Studies</div><a href='#'>Case Studies</a></li>
+  </ul>
+</body>
+</html>
